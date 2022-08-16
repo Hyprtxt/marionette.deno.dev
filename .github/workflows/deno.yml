@@ -47,7 +47,7 @@ jobs:
         with:
           project: test-marionette # the name of the project on Deno Deploy
           entrypoint: main.ts # the entrypoint to deploy
-          import-map: import-map.json # because fresh needs this
+          import-map: import_map.json # because fresh needs this
 
       - name: Run tests
         run: deno test -A --unstable
