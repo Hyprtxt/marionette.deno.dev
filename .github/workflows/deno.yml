@@ -45,8 +45,9 @@ jobs:
       - name: Deploy to Deno Deploy - test-marionette.deno.dev
         uses: denoland/deployctl@v1
         with:
-          project: test-puppet # the name of the project on Deno Deploy
+          project: test-marionette # the name of the project on Deno Deploy
           entrypoint: main.ts # the entrypoint to deploy
+          import-map: import_map.json # because fresh needs this
 
       - name: Run tests
         run: deno test -A --unstable
