@@ -42,7 +42,7 @@ jobs:
       # - name: Run linter
       #   run: deno lint
 
-      - name: Deploy to Deno Deploy - test.puppet.deno.dev
+      - name: Deploy to Deno Deploy - test-marionette.deno.dev
         uses: denoland/deployctl@v1
         with:
           project: test-puppet # the name of the project on Deno Deploy
