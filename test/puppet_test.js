@@ -1,7 +1,7 @@
 import { assertEquals } from "https://deno.land/std@0.148.0/testing/asserts.ts";
 import puppeteer from "https://deno.land/x/puppeteer@14.1.1/mod.ts";
 
-const URL = "https://test.marionette.deno.dev";
+const URL = "https://test-marionette.deno.dev";
 
 const headless = !Deno.env.get("PRODUCTION");
 
