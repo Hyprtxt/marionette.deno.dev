@@ -18,7 +18,7 @@ PUPPETEER_PRODUCT=chrome deno run -A --unstable https://deno.land/x/puppeteer@14
 
 (mac & linux, run `deno test -A` on windows and hopefully it will give you the right link)
 
-### Github Actions
+## Github Actions
 
 Runs `deno fmt` and the Puppeteer tests on Github Actions using a Linux Host. Fork the project and push to main or test to try it out.
 
@@ -28,7 +28,7 @@ Runs `deno fmt` and the Puppeteer tests on Github Actions using a Linux Host. Fo
 
 Setup the tests so they launch the project, and test that version.
 
-### Fresh Usage
+## Fresh Usage
 
 Start the project:
 
