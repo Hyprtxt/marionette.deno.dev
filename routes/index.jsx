@@ -2,7 +2,7 @@
 import { h } from "preact";
 import { tw } from "@twind";
 import Counter from "../islands/Counter.tsx";
-import { CSS, render } from "https://deno.land/x/gfm@0.1.22/mod.ts";
+import { CSS, render } from "gfm";
 import { Head } from "$fresh/runtime.ts";
 
 export const handler = {
