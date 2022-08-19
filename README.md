@@ -1,6 +1,6 @@
 # Marionette
 
-A [Fresh](https://fresh.deno.dev) project at https://marinette.deno.dev
+A [Fresh](https://fresh.deno.dev) project at https://marionette.deno.dev
 
 This is intereting because it has Puppeteer Testing integrated with Github
 Actions!
