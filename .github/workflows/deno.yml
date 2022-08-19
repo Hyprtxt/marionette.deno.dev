@@ -5,9 +5,9 @@ name: Deno Deploy & Test
 
 on:
   push:
-    branches: ["test"]
+    branches: ["main","test"]
   pull_request:
-    branches: ["test"]
+    branches: ["main","test"]
 
 permissions:
   id-token: write # This is required to allow the GitHub Action to authenticate with Deno Deploy.
