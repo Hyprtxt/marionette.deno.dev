@@ -16,38 +16,45 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
-
+    env:
+      DENO_DIR: deno_dir
+      CHROMIUM_PATH: deno_dir/deno_puppeteer/chromium/
     steps:
       - name: Setup repo
         uses: actions/checkout@v3
 
+      # - name: Setup .env secrets file
+      #   run: echo $ENV_GITHUB_ACTIONS | base64 -d > .env
+      #   env:
+      #     ENV_GITHUB_ACTIONS: ${{ secrets.ENV_GITHUB_ACTIONS }}
+
       - name: Setup Deno
         # uses: denoland/setup-deno@v1
-        uses: denoland/setup-deno@004814556e37c54a2f6e31384c9e18e983317366
+        uses: denoland/setup-deno@v1
         with:
           deno-version: v1.31.1
-      
+          
       - name: Verify formatting
         run: deno fmt --check
-      
+
       # - name: Run linter
       #   run: deno lint
-
-      # - name: Cache Deno dependencies
-      #   uses: actions/cache@v3
-      #   with:
-      #     # The Chrome install gets cached in here too...
-      #     key: denoDeps-${{ hashFiles('deno.lock') }}
-      #     path: ${{ env.DENO_DIR }}
+      
+      - name: Cache Deno dependencies
+        uses: actions/cache@v3
+        with:
+          # The Chrome install gets cached in here too...
+          key: denoDeps-${{ hashFiles('deno.lock') }}
+          path: ${{ env.DENO_DIR }}
 
       - name: Install Chromium for Puppeteer
         run: PUPPETEER_PRODUCT=chrome deno run -A https://deno.land/x/puppeteer@16.2.0/install.ts
 
-      # - name: Cache puppeteer
-      #   uses: actions/cache@v3
-      #   with:
-      #     key: puppeteer_${{ runner.os }}_v16_2_0
-      #     path: ${{ env.CHROMIUM_PATH }}
+      - name: Cache puppeteer
+        uses: actions/cache@v3
+        with:
+          key: puppeteer_${{ runner.os }}_v16_2_0
+          path: ${{ env.CHROMIUM_PATH }}
 
       - name: Run tests
         run: deno test -A
