@@ -18,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DENO_DIR: deno_dir
+      DENO_ENV: testing
       CHROMIUM_PATH: deno_dir/deno_puppeteer/chromium/
     steps:
       - name: Setup repo
@@ -46,15 +47,15 @@ jobs:
           # The Chrome install gets cached in here too...
           key: denoDeps-${{ hashFiles('deno.lock') }}
           path: ${{ env.DENO_DIR }}
+      
+      - name: Install Chromium for Puppeteer
+        run: PUPPETEER_PRODUCT=chrome deno run -A --unstable https://deno.land/x/puppeteer@16.2.0/install.ts
 
       - name: Cache puppeteer
         uses: actions/cache@v3
         with:
           key: puppeteer_${{ runner.os }}_v16_2_0
           path: ${{ env.CHROMIUM_PATH }}
-
-      - name: Install Chromium for Puppeteer
-        run: PUPPETEER_PRODUCT=chrome deno run -A --unstable https://deno.land/x/puppeteer@16.2.0/install.ts
 
       - name: Run tests
         run: deno test -A
