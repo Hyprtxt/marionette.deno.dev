@@ -18,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DENO_ENV: testing
+      BASE_URL: http://localhost:8000
       DENO_DIR: deno_dir
       CHROMIUM_PATH: deno_dir/deno_puppeteer/chromium/
     steps:

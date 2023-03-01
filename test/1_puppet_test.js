@@ -2,7 +2,7 @@ import { assertEquals } from "$std/testing/asserts.ts";
 import { freshPuppetTestWrapper } from "@/test/runner.js";
 // import { BASE_URL } from "@/utils/config.js"
 
-const BASE_URL = "https://marionette.deno.dev";
+const BASE_URL = Deno.env.get("BASE_URL") || "http://localhost:8000";
 
 Deno.test(
   "Public Pages Testing",
