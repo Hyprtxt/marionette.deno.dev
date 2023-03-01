@@ -2,6 +2,8 @@
 
 A [Fresh](https://fresh.deno.dev) project at https://marionette.deno.dev
 
+A [Github Repo](https://github.com/Hyprtxt/marionette.deno.dev) at https://github.com/Hyprtxt/marionette.deno.dev
+
 This is intereting because it has Puppeteer Testing integrated with Github
 Actions!
 

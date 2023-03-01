@@ -1,6 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
-import { tw } from "@twind";
 import Counter from "../islands/Counter.tsx";
 import { CSS, render } from "gfm";
 import { Head } from "$fresh/runtime.ts";
@@ -17,7 +14,7 @@ export const handler = {
 export default function PageHome({ data }) {
   const { CSS, readme } = data;
   return (
-    <div class={tw`p-4 mx-auto max-w-screen-md`}>
+    <div class="p-4 mx-auto max-w-screen-md">
       <Head>
         <style>{CSS}</style>
       </Head>
@@ -26,7 +23,7 @@ export default function PageHome({ data }) {
         height="100px"
         alt="the fresh logo: a sliced lemon dripping with juice"
       />
-      <p class={tw`my-6`}>
+      <p class="my-6">
         Welcome to `fresh`. Try updating this message in the ./routes/index.tsx
         file, and refresh.
       </p>
