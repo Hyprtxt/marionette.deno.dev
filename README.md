@@ -14,14 +14,7 @@ Try:
 deno test -A
 ```
 
-But you need to install chrome with this first:
-
-```
-PUPPETEER_PRODUCT=chrome deno run -A --unstable https://deno.land/x/puppeteer@14.1.1/install.ts
-```
-
-(mac & linux, run `deno test -A` on windows and hopefully it will give you the
-right link)
+But you need to install Chrome or Firefox with the link first. It will give you the install command, or you can go copy it out of the github action.
 
 ## Github Actions
 
