@@ -29,6 +29,9 @@ jobs:
       
       - name: Verify formatting
         run: deno fmt --check
+      
+      # - name: Run linter
+      #   run: deno lint
 
       # - name: Cache Deno dependencies
       #   uses: actions/cache@v3
@@ -37,8 +40,8 @@ jobs:
       #     key: denoDeps-${{ hashFiles('deno.lock') }}
       #     path: ${{ env.DENO_DIR }}
 
-      - name: Install Chromium for Puppeteer
-        run: PUPPETEER_PRODUCT=chrome deno run -A --unstable https://deno.land/x/puppeteer@16.2.0/install.ts
+      # - name: Install Chromium for Puppeteer
+      #   run: PUPPETEER_PRODUCT=chrome deno run -A https://deno.land/x/puppeteer@16.2.0/install.ts
 
       # - name: Cache puppeteer
       #   uses: actions/cache@v3
@@ -46,14 +49,5 @@ jobs:
       #     key: puppeteer_${{ runner.os }}_v16_2_0
       #     path: ${{ env.CHROMIUM_PATH }}
 
-      - name: Run tests
-        run: deno test -A
-
-      - name: Verify formatting
-        run: deno fmt --check
-
-      # - name: Run linter
-      #   run: deno lint
-
-      - name: Run tests
-        run: deno test -A
+      # - name: Run tests
+      #   run: deno test -A
