@@ -3,7 +3,7 @@ import { readLines } from "$std/io/read_lines.ts";
 import { delay } from "$std/async/delay.ts";
 // import { DENO_ENV } from "@/utils/config.js"
 
-const DENO_ENV = "testing";
+const DENO_ENV = Deno.env.get("DENO_ENV") || "development";
 
 const puppet_config = DENO_ENV === "development"
   ? { headless: false, defaultViewport: null }
