@@ -1,22 +1,18 @@
-// import { assertEquals } from "$std/testing/asserts.ts";
-// import { BASE_URL } from "@/utils/config.js";
-// // import { freshTestWrapper } from "marionette";
-// import { freshTestWrapper } from "@/test/marionette.js";
+import { assertEquals } from "$std/testing/asserts.ts";
+import { freshTestWrapper } from "marionette";
 
-// Deno.test(
-//   "API Testing",
-//   freshTestWrapper(async (t) => {
-//     await t.step("The API sign-in route should work", async () => {
-//       const data = new FormData();
-//       data.set("identifier", "example@gmail.com");
-//       data.set("password", "password");
-//       const login = await fetch(`${BASE_URL}/api/signin`, {
-//         method: "POST",
-//         body: data,
-//       }).then(async (res) => await res.json());
-//       assertEquals(login.user.id, 83);
-//       assertEquals(login.webview, true);
-//       assertEquals(login.cart, []);
-//     });
-//   }),
-// );
+// import { BASE_URL } from "@/utils/config.js";
+const BASE_URL = Deno.env.get("BASE_URL") || "http://localhost:8000";
+
+Deno.test(
+  "API Testing",
+  freshTestWrapper(async (t) => {
+    await t.step("The API joke route should work", async () => {
+      const joke = await fetch(`${BASE_URL}/api/joke`, {}).then(async (res) => {
+        return await res.text();
+      });
+      console.log(joke);
+      assertEquals(true, joke.length !== 0);
+    });
+  }),
+);
