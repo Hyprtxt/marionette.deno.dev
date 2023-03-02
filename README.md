@@ -2,6 +2,9 @@
 
 A [Fresh](https://fresh.deno.dev) project at https://marionette.deno.dev
 
+A [Fresh module](https://deno.land/x/fresh_marionette@v1.1.0) at
+https://deno.land/x/fresh_marionette@v1.1.0
+
 A [Github Repo](https://github.com/Hyprtxt/marionette.deno.dev) at
 https://github.com/Hyprtxt/marionette.deno.dev
 
