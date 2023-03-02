@@ -1,5 +1,6 @@
 import { assertEquals } from "$std/testing/asserts.ts";
-import { freshPuppetTestWrapper } from "@/test/runner.js";
+import { freshPuppetTestWrapper } from "https://deno.land/x/fresh_marionette@v1.0.0/mod.js";
+
 // import { BASE_URL } from "@/utils/config.js"
 
 const BASE_URL = Deno.env.get("BASE_URL") || "http://localhost:8000";
