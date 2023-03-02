@@ -14,7 +14,8 @@ Try:
 deno test -A
 ```
 
-But you need to install Chrome or Firefox with the link first. It will give you the install command, or you can go copy it out of the github action.
+But you need to install Chrome or Firefox with the link first. It will give you
+the install command, or you can go copy it out of the github action.
 
 ## Github Actions
 
