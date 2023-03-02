@@ -1,5 +1,6 @@
-import { assertEquals } from "https://deno.land/std@0.178.0/testing/asserts.ts";
-import { freshPuppetTestWrapper } from "https://deno.land/x/fresh_marionette@v1.0.1/mod.js";
+import { assertEquals } from "$std/testing/asserts.ts";
+// import { freshPuppetTestWrapper } from "marionette";
+import { freshPuppetTestWrapper } from "@/test/marionette.js";
 
 // import { BASE_URL } from "@/utils/config.js"
 
