@@ -1,4 +1,3 @@
-import Counter from "../islands/Counter.tsx";
 import { CSS, render } from "gfm";
 import { Head } from "$fresh/runtime.ts";
 
@@ -6,7 +5,7 @@ export const handler = {
   GET: async (req, ctx) => {
     const markdown = await Deno.readTextFile(`README.md`);
     const baseUrl = "https://github.com/Hyprtxt/marionette.deno.dev/blob/main";
-    const readme = render(markdown, { baseUrl, disableHtmlSanitization: true });
+    const readme = render(markdown, { baseUrl });
     return ctx.render({ CSS, readme, url: req.url });
   },
 };
